@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM MANIPULATION</title>
+    <script
+      src="https://kit.fontawesome.com/a7e1fad6a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="lalu.css" />
+  </head>
+  <body>
+    <div class="main">
+      <form action="POST">
+        <h1
+          class="animate__animated animate__lightSpeedInRight animate__slower 3s animate__repeat-1 1"
+        >
+          Add items
+          <hr style="width: 7rem" />
+        </h1>
+        <div class="container">
+          <label for="textinput"></label>
+          <input
+            autocomplete="off"
+            autofocus
+            required
+            class="container__input"
+            id="textinput"
+            maxlength="500"
+            minlength="5"
+            name="textinput"
+            placeholder="Enter here..."
+            type="text"
+          />
+          <button type="submit">add</button>
+        </div>
+        <h3 class="ul__header"></h3>
+
+        <div class="display__container">
+          <ul>
+            <li class="ul__list__item">
+              <p class="ul__list__para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                itaque at quo eum consequatur velit ab error! Repellendus,
+                veritatis qui itaque sint neque eius architecto, eveniet
+                mollitia voluptate, culpa fuga.
+              </p>
+              <input
+                class="completed__input"
+                id="completed__input"
+                name="completed__input"
+                type="checkbox"
+              />
+              <i class="fa-solid fa-xmark"></i>
+              <p class="ul__date">Added on:</p>
+            </li>
+          </ul>
+        </div>
+        <button class="delete__all__button" type="button">Delete all</button>
+        <p class="copyright">Copyright &copy; 2022</p>
+      </form>
+    </div>
+    <script src="lalu.js"></script>
+  </body>
+</html>
