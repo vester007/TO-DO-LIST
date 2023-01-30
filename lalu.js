@@ -5,11 +5,14 @@ const li = document.getElementsByTagName("li");
 
 const form = document.querySelector("form");
 const deleteBut = document.querySelector(".delete__all__button");
-
+//Adding current date to copyright
+const newdaate = new Date();
+document.querySelector(".copyright__year").innerText = newdaate.getFullYear();
+//
+//
+//ADD EVENT LISTENER FUNCTION
 form.addEventListener("submit", addItem);
 //
-
-//ADD EVENT LISTENER FUNCTION
 function addItem(e) {
   //This to prevent the FORM from behaving like a normal form
   e.preventDefault();
@@ -51,7 +54,6 @@ function addItem(e) {
     //add class to new P
     newP.classList.add("ul__date");
     //getting todays date
-    let newdaate = new Date();
     //newdaate.getFullYear().getDate().getMonth() + 1;
     let todaysDate = `${newdaate.getDate()}/${
       newdaate.getMonth() + 1
