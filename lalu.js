@@ -44,9 +44,15 @@ function addItem(e) {
     newPara.classList.add("ul__list__para");
     //CREATE ICON ELEMENT
     let iconFile = document.createElement("i");
+    let iconFile2 = document.createElement("i");
+    let iconFile3 = document.createElement("i");
     iconFile.classList.add("fa-solid", "fa-xmark");
+    iconFile2.classList.add("fa-sharp", "fa-regular", "fa-pen-to-square");
+    iconFile3.classList.add("fa-solid", "fa-floppy-disk");
     //add to the newly created text
     newli.append(iconFile);
+    newli.append(iconFile2);
+    newli.append(iconFile3);
     //reset input field
     form.reset();
     //Add date P
@@ -55,11 +61,12 @@ function addItem(e) {
     newP.classList.add("ul__date");
     //getting todays date
     //newdaate.getFullYear().getDate().getMonth() + 1;
-    let todaysDate = `${newdaate.getDate()}/${
-      newdaate.getMonth() + 1
-    }/${newdaate.getFullYear()}`;
+    let todaysDate = Intl.DateTimeFormat("en-us", {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
     //Add text to new P
-    newP.innerText = `Added on: ${todaysDate}`;
+    newP.innerText = todaysDate.format(newdaate);
     //Append New that has innerText and Date inside it to the LI
     newli.append(newP);
     //DISPLAY BLOCK BECAUSE ORIGINAL DISPLAY WAS TURNED OFF.
@@ -90,10 +97,10 @@ form.addEventListener("click", function (event) {
 //
 //
 //deleteitem
-ul.addEventListener("click", removeItem);
+ul.addEventListener("click", removeItemoredit);
 
 //deconste
-function removeItem(e) {
+function removeItemoredit(e) {
   if (e.target.classList.contains("fa-xmark")) {
     if (confirm("⚠️ This event will be deleted")) {
       const li = e.target.parentElement;
@@ -103,6 +110,24 @@ function removeItem(e) {
         deleteBut.style.display = "none";
       }
     }
+  }
+  if (e.target.classList.contains("fa-pen-to-square")) {
+    const gettingsibbling =
+      e.target.previousElementSibling.previousElementSibling;
+    gettingsibbling.setAttribute("contenteditable", "true");
+    gettingsibbling.style.backgroundColor = "#E0E0E0";
+    e.target.style.display = "none";
+    e.target.nextElementSibling.style.display = "block";
+  }
+  if (e.target.classList.contains("fa-floppy-disk")) {
+    e.target.previousElementSibling.previousElementSibling.previousElementSibling.setAttribute(
+      "contenteditable",
+      "false"
+    );
+    e.target.style.display = "none";
+    e.target.previousElementSibling.style.display = "block";
+    e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.backgroundColor =
+      "inherit";
   }
 }
 

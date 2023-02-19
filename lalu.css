@@ -79,7 +79,6 @@ ul {
   overflow-wrap: break-word;
   padding: 0 0.7rem;
   position: relative;
-  display: none;
 }
 
 .ul__date {
@@ -102,11 +101,21 @@ i {
   transition: transform 0.2s ease-in;
 }
 
+i:nth-of-type(2),
+i:nth-of-type(3) {
+  right: 15%;
+}
+
+i:nth-of-type(3) {
+  display: none;
+}
+
 i:hover {
   transform: scale(1.4);
 }
 
 .ul__list__para {
+  border-radius: 10px;
   padding: 0.8rem 2rem 0.8rem 0.8rem;
 }
 
@@ -167,6 +176,7 @@ i:hover {
   position: absolute;
   transform: scale(1.8);
   cursor: pointer;
+  accent-color: var(--header--body--color);
 }
 
 .delete__all__button {
