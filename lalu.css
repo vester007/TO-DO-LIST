@@ -79,7 +79,6 @@ ul {
   overflow-wrap: break-word;
   padding: 0 0.7rem;
   position: relative;
-  display: none;
 }
 
 .ul__date {
